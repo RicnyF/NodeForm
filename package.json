@@ -1,0 +1,28 @@
+{
+  "name": "node-form",
+  "version": "1.0.0",
+  "description": "IT2ProjectForm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./public/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RicnyF/NodeForm.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "PUG",
+    "CSV"
+  ],
+  "author": "Filip Ricny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RicnyF/NodeForm/issues"
+  },
+  "homepage": "https://github.com/RicnyF/NodeForm#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
