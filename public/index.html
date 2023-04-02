@@ -2,45 +2,43 @@
 <html lang="cs">
 
 <head>
-    <title>Školní úkoly</title> <!-- Required meta tags -->
+    <title>Personal records tracking</title> <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+        <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+        <link rel="stylesheet" href="css/styles.css">
+        </head>
 
-<body>
-    <header class="bg-primary text-center p-5">
-        <h1 class="display-3 text-white">Seznam úkolů</h1>
-        <p class="h3 text-warning">Ukázková aplikace v NodeJS</p>
+<body class="m-auto">
+    <header class="bg-success text-center p-5">
+        <h1 class="display-3 text-white">Personal records tracking</h1>
+        <p class="h3 CG">NodeJS application</p>
     </header>
-    <main class="container">
-        <h2 class="bg-info text-light text-center p-3 mt-3">Formulář pro zadání nového úkolu</h2>
+    <main class="container pb-5">
+        <h2 class="bg-dark text-white text-center p-2 mt-3">Formular for entering values of PR´s </h2>
         <div class="container">
             <form action="/savedata" method="post">
-                <div class="form-group row"> <label for="ukol" class="col-sm-2 col-form-label">Zadání úkolu</label>
-                    <div class="col-sm-10"> <input type="text" class="form-control" name="ukol" id="ukol"
-                            placeholder="Napište stručné zadání úkolu"> </div>
-                </div>
-                <div class="form-group row"> <label for="predmet" class="col-sm-2 col-form-label">Předmět</label>
+               
+                <div class="form-group row"> <label for="exercise" class="col-sm-2 col-form-label ">Exercise</label>
                     <div class="col-sm-10"></div>
-                    <select class="form-control" name="predmet" id="predmet">
-                        <option value="Anglický jazyk">Anglický jazyk</option>
-                        <option value="Český jazyk">Český jazyk</option>
-                        <option value="Elektrotechnika">Elektrotechnika</option>
-                        <option value="Fyzika">Fyzika</option>
-                        <option value="Hardware">Hardware</option>
-                        <option value="Matematika">Matematika</option>
-                        <option value="Počítačová grafika">Počítačová grafika</option>
-                        <option value="Počítačové sítě">Počítačové sítě</option>
-                        <option value="Programování">Programování</option>
-                        <option value="Programové vybavení">Programové vybavení</option>
+                    <select class="form-control mt-2" name="exercise" id="exercise">
+                        <option value="Bench Press">Bench Press</option>
+                        <option value="Deadlift">Deadlift</option>
+                        <option value="Squat">Squat</option>
+                        <option value="Leg Press">Leg Press</option>
+                        <option value="Bicep Curls">Bicep Curls</option>
+                        <option value="Shoulder Press">Shoulder Press</option>
                     </select>
                 </div>
+                <div class="form-group row"> <label for="weight" class="col-sm-2 col-form-label">Weight (in kg)</label>
+                   
+                    <div class="col-sm-10"> <input type="number" min="5" class="form-control" name="weight" id="weight"
+                            placeholder="Write a number in kgs describing your PR" required> </div>
+                </div>
         </div>
-        <div class="form-group row"> <label for="odevzdani" class="col-sm-2 col-form-label"> Datum odevzdání</label>
-            <div class="col-sm-5"> <input type="date" class="form-control" name="odevzdani" id="odevzdani"> </div>
-        </div>
+       
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10"> <button type="submit" class="btn btn-primary">Odeslat údaje</button>
             </div>
@@ -48,9 +46,11 @@
         </form>
         </div>
     </main>
-    <footer class="bg-light text-center p-3">
-        <p><img src="./img/skola-logo.png" alt="Školní logo"></p>
-        <p>&copy; 2022 - Marek Lučný, IT2, SŠPU Opava</p>
+    <footer class="footer mt-auto py-3 bg-light text-center fixed-bottom">
+        
+        <p><img class=""src="./img/favicon.ico" width="50" alt="Školní logo"></p>
+        <p class=" text-danger pb-1">click to see =><a href="/prtracks">Your PRs</a></p>
+        <p >&copy; 2023 - Filip Říčný, IT2, SŠPU Opava</p>
     </footer> <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

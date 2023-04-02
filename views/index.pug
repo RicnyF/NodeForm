@@ -4,28 +4,33 @@ html
         title Seznam úkolů
         link(rel='stylesheet'
         href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css')
-        body 
-            header.jumbotron-fluid.bg-success.p-3 
-                h1.text-center.text-white #{nadpis}
-
-            main.container 
+        link(rel="stylesheet", href="../css/styles.css")
+        link(rel="icon",type="image/x-icon" href="../img/favicon.ico")
+        body.m-auto
+            header.bg-success.text-center.p-5
+                h1.text-white.display3 #{nadpis}
+                p.h3.CG Table with values
+            main.container.pt-4
                 table(class="table table-striped")
-                    thead 
-                        tr.bg-dark.text-light 
-                            th Zadání úkolu 
-                            th Předmět 
-                            th Datum zadání
-                            th Datum odevzdání
+                    thead
+                        tr.bg-dark.text-light
+                            th Exercise
+                            th Weight 
+                            th Date
+                           
                     tbody 
-                        each ukol in ukoly 
+                        each value in values
                             tr 
-                                td #{ukol.ukol} 
-                                td #{ukol.predmet} 
-                                td #{ukol.zadani} 
-                                td #{ukol.odevzdani}
-            footer.bg-dark.p-2.container.text-white 
-                    p.float-right 
-                        a(href="/") Zpět na formulář
-                    p &copy; 2023 - IT2 - Filip Ricny -NodeJS
+                                td #{value.exercise} 
+                                td #{value.weight} 
+                                td #{value.date} 
+                      
+            footer.footer.mt-auto.py-3.bg-light.text-center.fixed-bottom
+                  p 
+                    <img src="../img/favicon.ico" width="50" alt="logo"><img/>
+                    p.text-danger.pb-1
+                        text click to get =>
+                        a(href="/") Back to form
+                    p &copy; 2023 - Filip Říčný, IT2, SŠPU Opava
             script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js') 
             script(src='https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js')

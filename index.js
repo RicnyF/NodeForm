@@ -10,10 +10,10 @@ const port = 3000;
 const urlencodedParser = bodyParser.urlencoded({
     extended: false
 });
-
+let weightpr
 app.post('/savedata', urlencodedParser, (req, res) => {
     let date = moment().format('YYYY-MM-DD');
-    let str = `"${req.body.ukol}","${req.body.predmet}","${date}","${req.body.odevzdani}"\n`;
+    let str = `"${req.body.exercise}","${req.body.weight}","${date}"\n`;
     fs.appendFile(path.join(__dirname, 'data/databaze.csv'), str, function (err) {
         if (err) {
             console.error(err);
@@ -28,15 +28,16 @@ app.post('/savedata', urlencodedParser, (req, res) => {
 app.use(express.static("public"));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
-app.get("/todolist", (req, res) => {
+app.get("/PRTracks", (req, res) => {
     csvtojson({
-            headers: ['ukol', 'predmet', 'zadani', 'odevzdani']
+            headers: ['exercise', 'weight', 'date']
         }).fromFile(path.join(__dirname, 'data/databaze.csv'))
         .then(data => {
             console.log(data);
             res.render('index', {
-                nadpis: "Seznam úkolů",
-                ukoly: data
+                nadpis: "Personal records tracking",
+                values: data,
+                img: "../img/favicon.ico"
             });
         })
         .catch(err => {
